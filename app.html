@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Lia's Grocery List</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <table id="grocery table"class= "table table-bordered table-condenesed table-striped">
+                <thead>
+                    <tbody>
+                        <tr>
+                            <th>Item</th>
+                            <th>Used For</th>
+                            <th>Qunatity</th>
+                         </tr>
+                    </tbody>
+                </thead>
+                </table>
+            </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <button type="button" id="addbutton" class="btn btn-primary" onclick="addclick();">Add Item</button>
+            </div>
+        </div>  
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"> Item Information</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="groceryitem">Grocery Item</label>
+                            <input type="text" id="groceryitem" class="form-control" />
+                          </div>
+                          <div class="form-group">
+                            <label for="usedfor">Used For</label>
+                            <input type="text" id="usedfor" class="form-control" />
+                          </div>
+                          <div class="form-group">
+                            <label for="quantityneeded">Quantity Needed</label>
+                            <input type="text" id="quantityneeded" class="form-control" />
+                          </div>
+                    </div>
+                    <div class="panel-footer"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="button" id="updateButton" class="btn btn-primary" onclick="updateClick()">Add</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
