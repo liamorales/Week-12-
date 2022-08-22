@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color:burlywood;
+    color: white;
+    font-family:"Poppins", sans-serif;
+    min-height: 100vh;
+}
+header{
+    font-size: 1.5rem;
+}
+.groceryContainer,.groceryTable{
+    min-height:30vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.groceryForm{
+    min-height:30vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 2rem;
+    border:none;
+}
+
+.updateButton,.deleteButton {
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet);
+    --bs-btn-border-color: var(--bd-violet);
+    --bs-btn-border-radius: .5rem;
+    --bs-btn-hover-color: var(--bs-white);
+
+}
+.updateButton:hover{
+    background: orange;
+    color:white;
+}
+$grid-columns: 12;
+

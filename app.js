@@ -1,53 +1,63 @@
-// Adding items to the table
+//Selectors
+const newItem = document.querySelector(".new-Item");
+const addButton =document.querySelector(".add-button");
+const deleteButton = document.querySelector(".deleteButton");
+const $itemInformation = $("#Grocery-list")
 
-function itemsAdd() {
-    /*adding the <tbody> tag so that my information will appear in my table
-    if ($("groceryTable tbody").length == 0) {
-        $("groceryTable").append("<tbody></tbody>");
-    }
-    Adding information to my table*/
+//Event Listeners
+const $itemInput = $("#item-input")
+const newElement =$("#new-item")
 
-    $("#groceryTable tbody").append("<tr>" + 
-    "<td>Penne Noodles</td>" + 
-    "<td>Penne en Vodka Sauce</td>" +
-    "<td>1 bag</td>" + 
-    "</tr>");
-    console.log(itemsAdd)
-    $("#groceryTable tbody").append("<tr>" + 
-    "<td>Vodka</td>" + 
-    "<td>Penne en Vodcka Sauce</td>" +
-    "<td>1 bottle</td>" + 
-    "</tr>");
+let editGroceryList = null;
 
-    $("#groceryTable tbody").append("<tr>" + 
-    "<td>Can of Crushed Tomatoes</td>" + 
-    "<td>Penne en Vodcka Sauce</td>" +
-    "<td>1 can</td>" + 
-    "</tr>");
+function onnewElement(){
+    $nameInput.val("")
+    editItemId =null;
 }
 
-$(document).ready(function () {
-    itemsAdd();
-});
 
-//Adding a row by the user
 
-function groceryitemUpdate() {
-    if ($("#groceryitem").val() != null && $("#groceryitem").val() != '') {
-        // Add item to Table
-        itemAddToTable();
-console.log(itemUpdate)
-        // Clear form fields
-        formClear();
+//functions
 
-        // Focus to item name field
-        $("#groceryitem").focus();
-    }
+function renderGroceryList(){
+    return $("<tr/>").append(
+        $("<td/>").text(item.name),
+        $("<td/>").append(
+            $("<button/>").addClass("btn btn-danger me-2").text("Delete").on("click", () => onDeleteButtonClick(item.id)),
+            $("<button>").addClass("btn btn-primary").text("Edit").on("click", () => onStartEditItem(item.id))
+        )
+    )
 }
-$(document).ready(function (){
-    groceryitemUpdated();
-});
 
+function onAddCreateNewItem (){
+    $newItem.text("Edit " + item.name)
+    $nameInput.val(item.name)
+    editItemId=item.id;
+}
+
+function onSaveNewItem() {
+    if (editItemId === null) {
+        itemList.push({
+            id: itemList[itemList.length -1].id +1,
+            name: $nameInput.val()
+        })
+    }
+    else {
+        const item = itemList.find(item => item.id === editItemId);
+        item.name=$nameInput.val();
+    }
+    renderItemList();
+}
+
+function onDeleteButtonClick(itemId){
+    const indexToDelete=itemList.findIndex(item =>item.id ===itemId)
+    itemList.splice(indexToDelete, 1);
+    renderItemList();
+}
+
+
+
+ 
 
 
 
